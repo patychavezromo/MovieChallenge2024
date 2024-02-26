@@ -1,15 +1,17 @@
 import './App.css'
-import getMovies from './ClientMovies/ClientMovies'
+import Movies from './Movies/Movies'
+
 
 
 function App() {
  
-  getMovies()
+  
   
 
   return (
     <>
-      hola mundo
+      <Movies/>
+      
     </>
   )
 }
