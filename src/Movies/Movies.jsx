@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import getMovies from "../ClientMovies/ClientMovies";
+import { Link } from 'react-router-dom';
 
 
 function Movies(){
@@ -18,18 +19,21 @@ function Movies(){
     //console.log('pagepaty',page)
 
     const handleClick=()=> {
-        // const overview= <div>{movie.overview}</div>
-        // alert(overview)
+        const overview= ()=> {<Link to="/Overview">Ir a Otra Ruta</Link>}
+        overview()
+        console.log('click')
     }
 
     let allPosters=[];
     
 
     dataMovies.forEach(movie =>{
-        const currentImg=<  img key={movie.id} 
-                            src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
-                            alt='poster' 
-                            onClick={handleClick}/>;
+        const currentImg=   <Link to="/Overview">
+                                <img key={movie.id} 
+                                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
+                                alt='poster' 
+                                onClick={handleClick}/>
+                            </Link>
         allPosters.push(currentImg);
     })
 
@@ -45,12 +49,8 @@ function Movies(){
     
     return (
         <>
-            {/* <div>
-                {allPosters}
-            </div> */}
             <div>
                 {allPosters}
-                {/* {console.log('allpostersPaty',allPosters)} */}
                 <button onClick={handlePrevPage} disabled={numberPage === 1}>Previous</button>
                 <button onClick={handleNextPage}>Next</button>
             </div>
