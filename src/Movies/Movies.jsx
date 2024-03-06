@@ -83,10 +83,7 @@ function Movies(){
 
     //console.log('pagepaty',page)
 
-    const handleClickOverview=()=> {
-        
-        console.log('click')
-    }
+
 
     let allPosters=[];
     
@@ -96,7 +93,6 @@ function Movies(){
                             <img 
                                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`} 
                                 alt='poster' 
-                                onClick={handleClickOverview}
                             />
                         </Link>
         allPosters.push(currentImg);
